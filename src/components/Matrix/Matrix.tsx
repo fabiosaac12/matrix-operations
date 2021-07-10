@@ -8,6 +8,7 @@ import {
   ExpandLess,
   ExpandMore
 } from '@material-ui/icons';
+import { validateValue } from './helpers';
 
 interface Props {
   matrix: MatrixType;
@@ -100,39 +101,16 @@ export const Matrix: FC<Props> = ({ matrix, setMatrix, error }) => {
                       disableUnderline={true}
                       inputProps={{ value: matrix[rowIndex][columnIndex] }}
                       onChange={({ target: { value } }) => {
-                        if ((value.match(/-/g) || []).length > 1) return;
-                        if (
-                          (value.match(/\./g) || []).length > 1 ||
-                          value.startsWith('.')
-                        )
-                          return;
-
-                        const withPoint = value.includes('.');
-                        const withMinus = value.includes('-');
-
-                        if (withPoint && value.startsWith('.')) return;
-                        if (
-                          withMinus &&
-                          !value.startsWith('-') &&
-                          !(value.startsWith('0') && value[1] === '-')
-                        )
-                          return;
-
-                        if (!withPoint && !withMinus && value.length > 2)
-                          return;
-                        if (withPoint && withMinus && value.length > 4) return;
-                        if (+withPoint + +withMinus === 1 && value.length > 3)
-                          return;
-
-                        handleChangeElementValue(
-                          rowIndex,
-                          columnIndex,
-                          value.startsWith('0') &&
-                            !(value[1] === '.') &&
-                            value.length > 1
-                            ? value.substring(1)
-                            : value || '0'
-                        );
+                        validateValue(value) &&
+                          handleChangeElementValue(
+                            rowIndex,
+                            columnIndex,
+                            value.startsWith('0') &&
+                              !(value[1] === '.') &&
+                              value.length > 1
+                              ? value.substring(1)
+                              : value || '0'
+                          );
                       }}
                     />
                   </div>
