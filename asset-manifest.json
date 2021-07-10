@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/matrix-operations/static/css/main.e97605a7.chunk.css",
-    "main.js": "/matrix-operations/static/js/main.c18432fd.chunk.js",
-    "main.js.map": "/matrix-operations/static/js/main.c18432fd.chunk.js.map",
+    "main.js": "/matrix-operations/static/js/main.4c8379a4.chunk.js",
+    "main.js.map": "/matrix-operations/static/js/main.4c8379a4.chunk.js.map",
     "runtime-main.js": "/matrix-operations/static/js/runtime-main.1cc941e8.js",
     "runtime-main.js.map": "/matrix-operations/static/js/runtime-main.1cc941e8.js.map",
     "static/js/2.8efb42d3.chunk.js": "/matrix-operations/static/js/2.8efb42d3.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.1cc941e8.js",
     "static/js/2.8efb42d3.chunk.js",
     "static/css/main.e97605a7.chunk.css",
-    "static/js/main.c18432fd.chunk.js"
+    "static/js/main.4c8379a4.chunk.js"
   ]
 }
